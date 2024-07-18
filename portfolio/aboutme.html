@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Myself</title>
+<style>
+  .container {
+    display: flex;
+    height: 100vh; /* 100% of the viewport height */
+  }
+  .container1{
+    display: flex;
+  }
+
+  .left-side {
+    flex: 1; /* Take up remaining space */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    padding: 20px;
+  }
+
+  .right-side {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Styling for demonstration purposes */
+  .left-side {
+    background-color: #f0f0f0;
+  }
+  .left-side1{
+    background-color: black;
+    text-align:center;
+     
+  }
+
+
+  .right-side {
+    background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
+  }
+  .right-side1 {
+    background-color:white;
+  }
+
+
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    border: 10px solid white;
+  }
+  h2{
+    text-align: left;
+    color:blue;
+    font-style: oblique;
+    
+    text-shadow:#0d0d0d;
+    text-decoration-color:none;
+    text-emphasis:unset;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  header{
+    height:80px;
+    width:100%;
+    color: #f0f0f0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  p,ul{
+    font-size:large;
+    text-decoration:wavy;
+    text-wrap:pretty;
+    text-transform: capitalize;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .header-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items:left;
+            padding-left: 1000px;
+            
+        }
+    button{
+            margin-right: 10px;
+            margin-top: 19px;
+            border: none;
+            text-transform: none;
+            background-color: aliceblue;
+            background-color: transparent;
+       
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: 200;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 15px;
+            
+        }
+        h3{
+          color: #0d0d0d;
+          
+          font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          padding-left: 20px;
+        }
+        .carousel-container {
+    width: 400px; /* Adjust width as needed */
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel img {
+    width: 100%;
+    display: block;
+  }
+       
+    
+</style>
+</head>
+<body>
+   <header>
+    <div class="container1">
+      <div class="lest-side1"><h3>Poojitha Ramparapu</h3></div>
+      <div class="right-side1">
+        <div class="header-buttons" >
+          <button type="button"><a href="portfolio.html">Home</a></button>
+        <button type="button"><a href="aboutme.html">Myself</a></button>
+        <button type="button"><a href="projects.html">Projects</a4</button>
+        <button type="button"><a href="achivements.html">Achivements</a></button>
+        </div>
+     </div>
+    </div>
+    
+    
+  </header>
+
+<div class="container">
+  <div class="left-side">
+    <!-- Scrolling text -->
+    <p>Hello...</p>
+    <p>I'm <b style="color:rgb(66, 5, 124)">Poojitha Ramparapu</b> </p>
+    <h2>Career Objective</h2>
+      <p>  currently pursuing my B.Tech degree in Computer Science and Engineering with a specialization in Artificial Intelligence.
+      Hailing from the vibrant village of Appalaraju Gudem, I bring a passion for technology and innovation to everything I do.
+      As a Pega certified professional, I possess a strong foundation in enterprise software development. Additionally, 
+       With a blend of academic excellence and 
+      practical skills, I am equipped to tackle complex challenges and contribute meaningfully to the ever-evolving field of technology.</p>
+    <h2>Strength's</h2> 
+      <ul>
+        <li>Tenacity(never Give-Up attitude)</li>
+        <li>Adoptability(Easily Adopting into any situation)</li>
+        <li>Quick Learner(Learn Pretty Faster)</li>
+      </ul>
+    <h2>Interest's</h2>    
+      <ul>
+        <li>Teaching(sharing Knowledge to others)</li>
+      </ul>
+    <h2>Hobbie's</h2>
+      <ul>
+        <li>Reading Books(Mythology)</li>
+        <li>Playing Chess</li>
+      </ul>
+  </div>
+  <div class="right-side">
+    <div class="carousel-container">
+      <div class="carousel">
+        
+        <img src="images/WhatsApp Image 2024-02-26 at 21.13.29.jpeg" alt="Image 2">
+        <img src="images/WhatsApp Image 2024-02-26 at 21.11.55.jpeg" alt="Image 3">
+      </div>
+    </div>
+    <!-- Images 
+    <img class="image" src="images/photo.jpg" alt="Image 1">-->
+    
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector('.carousel');
+    let scrollPos = 0;
+    const scrollWidth = carousel.scrollWidth;
+    const containerWidth = document.querySelector('.carousel-container').offsetWidth;
+    const imageWidth = document.querySelector('.carousel img').offsetWidth;
+    const imagesPerScroll = Math.floor(containerWidth / imageWidth); // Number of images to scroll at once
+    
+    function scrollCarousel() {
+      scrollPos += imagesPerScroll * imageWidth;
+      if (scrollPos > scrollWidth) {
+        scrollPos = 0;
+      }
+      carousel.style.transform = `translateX(-${scrollPos}px)`;
+    }
+    
+    setInterval(scrollCarousel, 2000); // Adjust timing as needed (milliseconds)
+  });
+</script>
+</body>
+</html>
